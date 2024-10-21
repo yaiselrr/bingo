@@ -52,6 +52,26 @@ const logout = () => {
                                     Dashboard
                                 </NavLink>
                             </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex" v-if="$page.props.users.permissions.includes('read country')">
+                                <NavLink :href="route('countries.index')" :active="route().current('countries.*')">
+                                    Paises
+                                </NavLink>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex" v-if="$page.props.users.permissions.includes('read state')">
+                                <NavLink :href="route('states.index')" :active="route().current('states.*')">
+                                    Provincias
+                                </NavLink>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex" v-if="$page.props.users.permissions.includes('read city')">
+                                <NavLink :href="route('cities.index')" :active="route().current('cities.*')">
+                                    Municipios
+                                </NavLink>
+                            </div>
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex" v-if="$page.props.users.permissions.includes('read cardboard')">
+                                <NavLink :href="route('cardboards.index')" :active="route().current('cardboards.*')">
+                                    Cartones
+                                </NavLink>
+                            </div>
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -193,6 +213,26 @@ const logout = () => {
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
+                        </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1" v-if="$page.props.users.permissions.includes('read country')">
+                        <ResponsiveNavLink :href="route('countries.index')" :active="route().current('countries.*')">
+                            Paises
+                        </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1" v-if="$page.props.users.permissions.includes('read state')">
+                        <ResponsiveNavLink :href="route('states.index')" :active="route().current('states.*')">
+                            Provincias
+                        </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1" v-if="$page.props.users.permissions.includes('read city')">
+                        <ResponsiveNavLink :href="route('cities.index')" :active="route().current('cities.*')">
+                            Municipios
+                        </ResponsiveNavLink>
+                    </div>
+                    <div class="pt-2 pb-3 space-y-1" v-if="$page.props.users.permissions.includes('read cardboard')">
+                        <ResponsiveNavLink :href="route('cardboards.index')" :active="route().current('cardboards.*')">
+                            Cartones
                         </ResponsiveNavLink>
                     </div>
 
